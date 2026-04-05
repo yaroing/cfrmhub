@@ -1,0 +1,86 @@
+@import 'tailwindcss';
+
+:root,
+[data-theme='light'] {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --surface-hover: #eef1f6;
+  --text: #1e293b;
+  --text-heading: #0f172a;
+  --text-muted: #64748b;
+  /* Maquette CFRM — violet & bleu marine */
+  --app-navy: #0f172a;
+  --app-navy-hover: #1e293b;
+  --app-purple: #7c3aed;
+  --app-purple-hover: #6d28d9;
+  --app-purple-soft: rgba(124, 58, 237, 0.12);
+  --sidebar-bg: #f1f5f9;
+  --sidebar-active-bar: #7c3aed;
+  --card-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  /** Hauteur zone sous l’en-tête public fixe (évite chevauchement + scroll) */
+  --border: #cbd5e1;
+  /* Marque CFRM Hub (SVG inline) */
+  --logo-bubble-a: #1e4a8a;
+  --logo-bubble-b: #2563eb;
+  --logo-accent-a: #0ea5e9;
+  --logo-accent-b: #38bdf8;
+  --logo-on-bubble: #ffffff;
+  --logo-on-bubble-muted: rgba(255, 255, 255, 0.88);
+  --logo-hub-line: rgba(255, 255, 255, 0.45);
+  --logo-word-hub: #0284c7;
+}
+
+[data-theme='dark'] {
+  --bg: #0b1220;
+  --surface: #111827;
+  --surface-hover: #1e293b;
+  --text: #e2e8f0;
+  --text-heading: #f8fafc;
+  --text-muted: #94a3b8;
+  --app-navy: #312e81;
+  --app-navy-hover: #4338ca;
+  --app-purple: #a78bfa;
+  --app-purple-hover: #c4b5fd;
+  --app-purple-soft: rgba(167, 139, 250, 0.12);
+  --sidebar-bg: #0f172a;
+  --sidebar-active-bar: #a78bfa;
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --border: #334155;
+  --logo-bubble-a: #1d4ed8;
+  --logo-bubble-b: #38bdf8;
+  --logo-accent-a: #22d3ee;
+  --logo-accent-b: #7dd3fc;
+  --logo-on-bubble: #f8fafc;
+  --logo-on-bubble-muted: rgba(248, 250, 252, 0.92);
+  --logo-hub-line: rgba(248, 250, 252, 0.5);
+  --logo-word-hub: #38bdf8;
+}
+
+html {
+  color-scheme: light dark;
+  scroll-padding-top: 8.25rem;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 5.75rem;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  min-height: 100dvh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Leaflet */
+.leaflet-container {
+  font-family: inherit;
+}

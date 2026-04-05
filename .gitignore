@@ -1,0 +1,36 @@
+# Secrets et environnement — ne jamais versionner
+.env
+.env.*
+!.env.example
+**/.env
+!**/.env.example
+
+# Dépendances et builds
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS & éditeurs
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.suo
+
+# Tests & couverture
+coverage/
+playwright-report/
+test-results/
+
+# Supabase CLI local (si présent)
+supabase/.branches/
+supabase/.temp/
