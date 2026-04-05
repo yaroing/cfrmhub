@@ -29,6 +29,7 @@ import { effectivePriority } from '../utils/classification'
 import { format } from 'date-fns'
 import {
   fetchDashboardAiConfig,
+  invokeDashboardGeminiInsight,
   resolveDashboardAiBody,
   type DashboardAiConfig,
 } from '../services/dashboardAiService'
@@ -124,6 +125,9 @@ export function DashboardPage() {
   const [unassignedOnly, setUnassignedOnly] = useState(false)
   const { exporting, exportCsv } = useExportFeedbacksCsv()
   const [aiConfig, setAiConfig] = useState<DashboardAiConfig>({ enabled: true })
+  const [aiGeminiText, setAiGeminiText] = useState<string | null>(null)
+  const [aiGeminiLoading, setAiGeminiLoading] = useState(false)
+  const [aiGeminiErr, setAiGeminiErr] = useState(false)
 
   const filters: FeedbackListFilters = useMemo(
     () => ({
@@ -223,6 +227,37 @@ export function DashboardPage() {
       .then(setAiConfig)
       .catch(() => setAiConfig({ enabled: true }))
   }, [])
+
+  useEffect(() => {
+    if (aiConfig.source !== 'gemini') {
+      setAiGeminiText(null)
+      setAiGeminiErr(false)
+      setAiGeminiLoading(false)
+    }
+  }, [aiConfig.source])
+
+  const filtersKey = useMemo(() => JSON.stringify(filters), [filters])
+
+  useEffect(() => {
+    if (aiConfig.enabled === false || aiConfig.source !== 'gemini') return
+
+    const handle = window.setTimeout(() => {
+      void (async () => {
+        setAiGeminiLoading(true)
+        setAiGeminiErr(false)
+        try {
+          const text = await invokeDashboardGeminiInsight(filters, lang)
+          setAiGeminiText(text)
+        } catch {
+          setAiGeminiErr(true)
+        } finally {
+          setAiGeminiLoading(false)
+        }
+      })()
+    }, 650)
+
+    return () => window.clearTimeout(handle)
+  }, [filtersKey, aiConfig.enabled, aiConfig.source, lang])
 
   useEffect(() => {
     setPage(0)
@@ -336,6 +371,12 @@ export function DashboardPage() {
     [aiConfig, lang, t],
   )
 
+  const aiInsightParagraph =
+    aiConfig.source === 'gemini'
+      ? aiGeminiText ??
+        (aiGeminiLoading ? '' : aiBodyDisplay)
+      : aiBodyDisplay
+
   return (
     <div className="flex-1 space-y-6 overflow-auto p-4 md:p-8">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -416,7 +457,15 @@ export function DashboardPage() {
               ✨
             </span>
             <h3 className="mt-2 text-lg font-semibold text-white">{t('dashboard.aiTitle')}</h3>
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-white/80">{aiBodyDisplay}</p>
+            {aiConfig.source === 'gemini' && aiGeminiLoading && !aiGeminiText && (
+              <p className="mt-2 text-sm text-white/70">{t('dashboard.aiGeminiLoading')}</p>
+            )}
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-white/80 whitespace-pre-wrap">
+              {aiInsightParagraph || '\u00a0'}
+            </p>
+            {aiConfig.source === 'gemini' && aiGeminiErr && (
+              <p className="mt-2 text-xs text-amber-200/90">{t('dashboard.aiGeminiError')}</p>
+            )}
             {canViewAnalytics(role) ? (
               <Link to="/app/analytics" className="mt-6 block">
                 <Button type="button" variant="primary" className="w-full">

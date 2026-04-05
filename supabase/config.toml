@@ -358,6 +358,11 @@ allow_dynamic_registration = false
 [functions.whatsapp-business-webhook]
 verify_jwt = false
 
+# Analyse IA (Gemini) : verify_jwt désactivé pour éviter des 401 côté passerelle (JWT ES256 / en-têtes)
+# alors que l’auth reste obligatoire dans le handler (Bearer + auth.getUser(token)).
+[functions.dashboard-ai-insight]
+verify_jwt = false
+
 [edge_runtime]
 enabled = true
 # Supported request policies: `oneshot`, `per_worker`.

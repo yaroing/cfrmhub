@@ -2,6 +2,8 @@
 
 Plateforme web **multicanale** de gestion de feedback communautaire pour ONG humanitaires — prototype opérationnel (React + Supabase) axé sur la **redevabilité envers les populations affectées (AAP)** et l’alignement CHS / IASC.
 
+**Dépôt :** [github.com/yaroing/cfrmhub](https://github.com/yaroing/cfrmhub)
+
 ## Structure du projet
 
 ```
@@ -13,10 +15,10 @@ cfrm-hub/
 │   ├── .env.example
 │   └── package.json
 ├── supabase/
-│   └── migrations/         # Schéma SQL, RLS, triggers, RPC (ordre ci-dessous)
+│   ├── migrations/         # Schéma SQL, RLS, triggers, RPC (ordre ci-dessous)
+│   └── functions/          # Edge Functions (Twilio, Telegram, WhatsApp, analyse IA Gemini, etc.)
 ├── docs/                   # Installation, technique, utilisateur, tests, checklist
-├── LICENSE                 # MIT
-└── Documentation Conception CFRMHub/   # Documents fournis (hors code)
+└── LICENSE                 # MIT
 ```
 
 ## Prérequis
@@ -37,6 +39,8 @@ Exécuter **dans l’ordre** dans *SQL Editor* (ou via CLI `supabase db push`) :
 | 5 | `supabase/migrations/20260405140000_twilio_sms_channel.sql` | Canal `sms_twilio` + index idempotence Twilio (`MessageSid`) |
 | 6 | `supabase/migrations/20260405150000_telegram_bot_channel.sql` | Canal `telegram_bot` + index idempotence (`update_id`) pour le webhook bot |
 | 7 | `supabase/migrations/20260405160000_repair_telegram_bot_trigger.sql` | Réaligne contrainte + trigger si la #6 avait été oubliée (évite canal `web` pour Telegram) |
+
+Liste complète et ordre à jour (WhatsApp Business, analyse IA, etc.) : **[docs/INSTALLATION.md](docs/INSTALLATION.md)**.
 
 **Sans les fichiers 2 et 3**, le frontend v2 (pièces jointes, certains rôles, RPC à paramètres étendus) peut **échouer** ou être incohérent avec la base.
 

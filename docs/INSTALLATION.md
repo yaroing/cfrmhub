@@ -13,6 +13,7 @@
    7. `supabase/migrations/20260405160000_repair_telegram_bot_trigger.sql` (réparation si la #6 manquait — Telegram affiché comme « web »)
    8. `supabase/migrations/20260406210000_whatsapp_business_channel.sql` (WhatsApp Business / Meta Cloud API — compte Meta : [GUIDE_COMPTE_META_WHATSAPP_BUSINESS.md](GUIDE_COMPTE_META_WHATSAPP_BUSINESS.md), branchement CFRM : [WHATSAPP_BUSINESS_API.md](WHATSAPP_BUSINESS_API.md))
    9. `supabase/migrations/20260406230000_dashboard_ai_setting.sql` (texte configurable du bloc « Analyse IA » + lecture pour tous les rôles connectés)
+   10. `supabase/migrations/20260407140000_dashboard_ai_source.sql` (champ JSON `source` : manuel ou Gemini)
 3. Vérifiez les messages :
    - Si `ALTER PUBLICATION supabase_realtime ADD TABLE` indique que la table est déjà dans la publication, c’est normal.
 4. **Authentication** : activez le fournisseur *Email* (mot de passe).
@@ -74,6 +75,19 @@ Utilisez le formulaire public et les trois simulateurs (connecté en validateur 
 
 Option : exécuter `docs/DEMO_DATA.sql` dans l’éditeur SQL (selon droits) pour injecter quelques fiches types.
 
-## 7. Sauvegardes
+## 7. Analyse IA (Google Gemini) — optionnel
+
+1. Créez une clé API sur [Google AI Studio](https://aistudio.google.com/apikey).
+2. **Important (502 fréquent)** : dans Google Cloud Console → **Identifiants** → votre clé → **Restrictions d’application**, choisissez **Aucune** (ou une restriction adaptée aux appels **serveur**, pas « sites web »). Une clé limitée par **référents HTTP** fonctionne dans le navigateur mais est **refusée** depuis les Edge Functions Supabase (IP/serveur).
+3. Dans Supabase : **Edge Functions → Secrets**, ajoutez `GEMINI_API_KEY`. Optionnel : `GEMINI_MODEL` (sinon la fonction essaie d’abord `gemini-1.5-flash`, puis `gemini-2.0-flash` si le premier renvoie 404 / modèle inconnu). En cas de **502**, ouvrez l’onglet Réseau du navigateur : le JSON contient `detail` (message Google) et souvent `hint` ; les logs de la fonction indiquent le modèle essayé.
+4. Déployez la fonction (inclut `verify_jwt = false` dans `config.toml` : l’authentification est faite dans le code avec `auth.getUser(jwt)` pour éviter des 401 erronés à la passerelle) :
+   ```bash
+   supabase functions deploy dashboard-ai-insight
+   ```
+5. Dans l’app (admin) : **Analyse IA** → source **Google Gemini**, enregistrer.
+
+Les agrégats (KPI) sont calculés côté serveur avec le jeton de l’utilisateur connecté (RLS). La clé Gemini ne quitte jamais Supabase.
+
+## 8. Sauvegardes
 
 Voir **[BACKUP.md](BACKUP.md)** pour les rappels sur la continuité des données Supabase.

@@ -403,6 +403,8 @@
     "mapGeoCaption": "Geographic spread · West Africa",
     "aiTitle": "AI insight",
     "aiBody": "Example: notable increase in food-security-related feedback in the Lake Chad basin for the filtered period — analytics reports break down trends and volumes.",
+    "aiGeminiLoading": "Generating summary (Google Gemini)…",
+    "aiGeminiError": "Automatic insight is unavailable (API key or network). Fallback text is shown.",
     "aiCta": "View reports",
     "aiCtaNoAccess": "Analytics reports are limited to authorised team roles.",
     "tabAll": "All",
@@ -580,13 +582,20 @@
   },
   "adminAiInsight": {
     "title": "Configure AI insight (dashboard)",
-    "intro": "The navy “AI insight” panel next to the map shows guidance text (sample or operational message). Detailed reports remain under Analytics.",
+    "intro": "The “AI insight” panel next to the map can show fixed copy (manual) or a Google Gemini summary based on dashboard indicators each user is allowed to see. Detailed reports remain under Analytics.",
     "showBlock": "Show the “AI insight” block on the dashboard",
+    "sourceLabel": "Text source",
+    "source": {
+      "manual": "Manual text (FR / EN)",
+      "gemini": "Google Gemini (dashboard aggregates)"
+    },
+    "geminiHint": "Deploy the “dashboard-ai-insight” Edge Function and set the GEMINI_API_KEY secret in Supabase (Edge Functions → Secrets). Optional: GEMINI_MODEL (e.g. gemini-2.0-flash or gemini-1.5-flash). Never put the key in the repo or the browser.",
     "bodyFr": "French text",
     "bodyEn": "English text",
     "placeholderFr": "Leave empty to use the default UI string for French",
     "placeholderEn": "Leave empty to use the default UI string for English",
     "fallbackHint": "If a language field is empty, the translation file default (dashboard.aiBody) is used for that language.",
+    "fallbackHintGemini": "In Gemini mode, the fields above are used as fallback if the API fails or is not configured.",
     "save": "Save",
     "saving": "Saving…",
     "saved": "Settings saved."
