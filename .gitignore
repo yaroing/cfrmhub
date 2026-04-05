@@ -34,3 +34,6 @@ test-results/
 # Supabase CLI local (si présent)
 supabase/.branches/
 supabase/.temp/
+
+# Documentation conception (hors dépôt public)
+Documentation Conception CFRMHub/
