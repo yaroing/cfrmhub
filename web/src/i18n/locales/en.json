@@ -6,6 +6,8 @@
     "login": "Sign in",
     "teamPortal": "Team portal",
     "dashboard": "Dashboard",
+    "feedbackManagement": "Feedback management",
+    "overview": "Overview",
     "intake": "Assisted submission",
     "actions": "Action plan",
     "analytics": "Analytics",
@@ -378,7 +380,9 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "subtitle": "Paginated view, server filters, map and indicators.",
+    "subtitle": "Key indicators and map (global view, per your permissions). Filters and detailed list: Feedback management in the menu.",
+    "manageFeedbacksHint": "Advanced search, filters, quick-sort tabs and the paginated table are on the dedicated page.",
+    "manageFeedbacksCta": "Manage feedback",
     "exportCsv": "Export CSV",
     "loadFail": "Could not load",
     "exportFail": "Export failed",
@@ -436,6 +440,11 @@
     "badgeDup": "Duplicate?",
     "prev": "Previous",
     "next": "Next"
+  },
+  "feedbackMgmt": {
+    "title": "Feedback management",
+    "subtitle": "Filters, quick tabs and the case list.",
+    "backToDashboard": "← Dashboard"
   },
   "field": {
     "back": "← My submissions",

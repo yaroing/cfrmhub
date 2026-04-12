@@ -10,14 +10,16 @@ flowchart LR
     F["/feedback Formulaire"]
   end
   subgraph app [Espace connecté /app]
-    D["/app Tableau de bord + liste"]
+    D["/app Tableau de bord (KPI + carte)"]
+    L["/app/feedbacks Gestion liste"]
     FD["/app/feedback/:id Détail cas"]
     INT["/app/intake Saisie terrain"]
     AN["/app/analytics Analytique"]
     AD["/app/admin/* Administration"]
   end
   H --> F
-  D --> FD
+  D --> L
+  L --> FD
 ```
 
 ---
@@ -79,8 +81,8 @@ flowchart LR
 
 ## WF-02 — Tableau de bord administrateur / superviseur
 
-**Routes principales :** `/app` (KPI + synthèse opérationnelle), `/app/analytics` (courbes / répartition), `/app/admin/*` (configuration).  
-**Pages :** `DashboardPage.tsx` (bandeau KPI + carte), `AnalyticsPage.tsx`, menu `DashboardLayout.tsx`.
+**Routes principales :** `/app` (KPI + carte, vue globale), `/app/feedbacks` (filtres + liste), `/app/analytics`, `/app/admin/*`.  
+**Pages :** `DashboardPage.tsx`, `FeedbackManagementPage.tsx`, `AnalyticsPage.tsx`, `DashboardLayout.tsx`.
 
 > *Superviseur / admin* : même coque **layout** (sidebar + barre du haut) ; les entrées **Admin** et **Analytique** dépendent des rôles (`validator`, `observer`, `admin`, etc.).
 
@@ -88,15 +90,17 @@ flowchart LR
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ SIDEBAR                          │ BARRE DU HAUT                              │
 │  · Tableau de bord               │  [ Recherche globale feedbacks… ]  🌐 🔔   │
-│  · Saisie terrain (si rôle)      │  [ Exporter CSV ] (si droit)   [Avatar]   │
-│  · Suivi des actions             ├──────────────────────────────────────────┤
-│  · Analytique (si rôle)          │                                          │
-│  · ─── Admin (si admin)          │   TABLEAU DE BORD — Vue supervision       │
+│  · Gestion des retours           │  [ Exporter CSV ] (si droit)   [Avatar]   │
+│  · Saisie terrain (si rôle)      ├──────────────────────────────────────────┤
+│  · Suivi des actions             │                                          │
+│  · Analytique (si rôle)          │   TABLEAU DE BORD — KPI + carte           │
+│  · ─── Admin (si admin)          │                                          │
 │      Utilisateurs, Catégories,   │                                          │
 │      Canaux, Points focaux,      │   ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐ …   │
 │      Audit                       │   │Tot.│ │Nouv│ │Cours│ │Crit│ │Doub│   │
 │                                  │   └────┘ └────┘ └────┘ └────┘ └────┘    │
-│                                  │   (cartes KPI cliquables / filtres rapides)│
+│                                  │   [ Bouton → Gestion des retours ]       │
+│                                  │   + carte géographique                   │
 │                                  │                                          │
 └──────────────────────────────────┴──────────────────────────────────────────┘
 
@@ -111,14 +115,14 @@ flowchart LR
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-**Points clés :** KPI alignés sur `fetchDashboardKpis` ; filtres du dashboard ; analytics = tendances longues ; admin = paramétrage métier hors liste des cas.
+**Points clés :** KPI et carte sans filtres (vue globale RLS) ; liste filtrée sur `/app/feedbacks` ; analytics = tendances longues ; admin = paramétrage métier.
 
 ---
 
 ## WF-03 — Interface de liste des cas (agent / gestionnaire)
 
-**Route :** `/app` (zone liste + carte, sous les KPI).  
-**Alternatives rôle :** agent terrain → redirection possible vers `/app/intake` (`FieldSubmitPage`) pour la saisie ; la **liste complète** reste le cœur du dashboard pour validateurs / gestionnaires.
+**Route :** `/app/feedbacks` — page **`FeedbackManagementPage.tsx`**.  
+**Alternatives rôle :** agent terrain : entrée **Mes envois** dans la barre latérale ; saisie via `/app/intake` (`FieldSubmitPage`).
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -201,7 +205,7 @@ flowchart LR
 |------|----------------------|--------------------------|
 | WF-01 | `/feedback`          | `PublicFeedbackPage.tsx` |
 | WF-02 | `/app`, `/app/analytics`, admin | `DashboardPage.tsx`, `AnalyticsPage.tsx`, `DashboardLayout.tsx` |
-| WF-03 | `/app` (liste + carte) | `DashboardPage.tsx`    |
+| WF-03 | `/app/feedbacks` | `FeedbackManagementPage.tsx` |
 | WF-04 | `/app/feedback/:id`  | `FeedbackDetailPage.tsx` |
 
 ---

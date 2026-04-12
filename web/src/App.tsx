@@ -11,6 +11,7 @@ import { AdminCategoriesPage } from './pages/admin/AdminCategoriesPage'
 import { AdminChannelsPage } from './pages/admin/AdminChannelsPage'
 import { AdminUsersPage } from './pages/admin/AdminUsersPage'
 import { DashboardPage } from './pages/DashboardPage'
+import { FeedbackManagementPage } from './pages/FeedbackManagementPage'
 import { FeedbackDetailPage } from './pages/FeedbackDetailPage'
 import { HomePage } from './pages/HomePage'
 import { PublicLegalPage } from './pages/PublicLegalPage'
@@ -64,6 +65,7 @@ export default function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/app" element={<DashboardLayout />}>
               <Route index element={<DashboardPage />} />
+              <Route path="feedbacks" element={<FeedbackManagementPage />} />
               <Route
                 path="intake"
                 element={

@@ -6,6 +6,8 @@
     "login": "Connexion",
     "teamPortal": "Espace équipe",
     "dashboard": "Tableau de bord",
+    "feedbackManagement": "Gestion des retours",
+    "overview": "Vue d’ensemble",
     "intake": "Soumission pour un usager",
     "actions": "Plan d’actions",
     "analytics": "Analytique",
@@ -378,7 +380,9 @@
   },
   "dashboard": {
     "title": "Tableau de bord",
-    "subtitle": "Vue paginée, filtres serveur, carte et indicateurs.",
+    "subtitle": "Indicateurs clés et carte (vue globale, selon vos droits). Filtres et liste détaillée : menu Gestion des retours.",
+    "manageFeedbacksHint": "Recherche avancée, filtres, onglets de tri rapide et liste paginée sont sur la page dédiée.",
+    "manageFeedbacksCta": "Gérer les retours",
     "exportCsv": "Exporter CSV",
     "loadFail": "Chargement impossible",
     "exportFail": "Export impossible",
@@ -436,6 +440,11 @@
     "badgeDup": "Doublon ?",
     "prev": "Précédent",
     "next": "Suivant"
+  },
+  "feedbackMgmt": {
+    "title": "Gestion des retours",
+    "subtitle": "Filtres, tri rapide et liste des fiches.",
+    "backToDashboard": "← Tableau de bord"
   },
   "field": {
     "back": "← Mes envois",

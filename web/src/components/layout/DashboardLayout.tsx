@@ -55,7 +55,7 @@ function DashboardTopBar() {
   const { exporting, exportCsv } = useExportFeedbacksCsv()
   const [exportErr, setExportErr] = useState('')
   const fr = i18n.language.startsWith('fr')
-  const isDashboardHome = loc.pathname === '/app'
+  const showHeaderExport = loc.pathname === '/app' || loc.pathname === '/app/feedbacks'
 
   async function onHeaderExport() {
     setExportErr('')
@@ -93,7 +93,7 @@ function DashboardTopBar() {
             🔔
             <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-500 ring-2 ring-[var(--surface)]" />
           </span>
-          {isDashboardHome && canExport(role) && (
+          {showHeaderExport && canExport(role) && (
             <Button type="button" variant="secondary" size="sm" disabled={exporting} onClick={() => void onHeaderExport()}>
               {exporting ? t('common.exporting') : t('dashboard.exportCsv')}
             </Button>
@@ -122,13 +122,15 @@ export function DashboardLayout() {
 
   const staffNav: NavItem[] = [
     { to: '/app', label: t('nav.dashboard'), icon: '📊' },
+    { to: '/app/feedbacks', label: t('nav.feedbackManagement'), icon: '📋' },
     { to: '/app/intake', label: t('nav.intake'), icon: '📝' },
     { to: '/app/actions', label: t('nav.actions'), icon: '🎯' },
     { to: '/app/analytics', label: t('nav.analytics'), icon: '📈' },
   ]
 
   const fieldNav: NavItem[] = [
-    { to: '/app', label: t('nav.mySubmissions'), icon: '📥' },
+    { to: '/app/feedbacks', label: t('nav.mySubmissions'), icon: '📥' },
+    { to: '/app', label: t('nav.overview'), icon: '📊' },
     { to: '/app/intake', label: t('nav.intake'), icon: '📝' },
   ]
 
