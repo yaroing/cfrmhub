@@ -9,7 +9,7 @@ import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { Input } from '../components/ui/Input'
 import { useAuth, useRole } from '../hooks/useAuth'
-import { canExport, canSubmitFeedback, canViewAnalytics } from '../utils/permissions'
+import { canExport, canSubmitFeedback } from '../utils/permissions'
 import { useExportFeedbacksCsv } from '../hooks/useExportFeedbacksCsv'
 import { supabase } from '../lib/supabaseClient'
 import {
@@ -27,12 +27,6 @@ import { useDateFnsLocale } from '../hooks/useDateFnsLocale'
 import { categoryLabel } from '../utils/categoryLabel'
 import { effectivePriority } from '../utils/classification'
 import { format } from 'date-fns'
-import {
-  fetchDashboardAiConfig,
-  invokeDashboardGeminiInsight,
-  resolveDashboardAiBody,
-  type DashboardAiConfig,
-} from '../services/dashboardAiService'
 
 const PAGE_SIZE = 25
 
@@ -124,11 +118,6 @@ export function DashboardPage() {
   const [assignedToMe, setAssignedToMe] = useState(false)
   const [unassignedOnly, setUnassignedOnly] = useState(false)
   const { exporting, exportCsv } = useExportFeedbacksCsv()
-  const [aiConfig, setAiConfig] = useState<DashboardAiConfig>({ enabled: true })
-  const [aiGeminiText, setAiGeminiText] = useState<string | null>(null)
-  const [aiGeminiLoading, setAiGeminiLoading] = useState(false)
-  const [aiGeminiErr, setAiGeminiErr] = useState(false)
-
   const filters: FeedbackListFilters = useMemo(
     () => ({
       q,
@@ -221,43 +210,6 @@ export function DashboardPage() {
   useEffect(() => {
     void load()
   }, [load])
-
-  useEffect(() => {
-    void fetchDashboardAiConfig()
-      .then(setAiConfig)
-      .catch(() => setAiConfig({ enabled: true }))
-  }, [])
-
-  useEffect(() => {
-    if (aiConfig.source !== 'gemini') {
-      setAiGeminiText(null)
-      setAiGeminiErr(false)
-      setAiGeminiLoading(false)
-    }
-  }, [aiConfig.source])
-
-  const filtersKey = useMemo(() => JSON.stringify(filters), [filters])
-
-  useEffect(() => {
-    if (aiConfig.enabled === false || aiConfig.source !== 'gemini') return
-
-    const handle = window.setTimeout(() => {
-      void (async () => {
-        setAiGeminiLoading(true)
-        setAiGeminiErr(false)
-        try {
-          const text = await invokeDashboardGeminiInsight(filters, lang)
-          setAiGeminiText(text)
-        } catch {
-          setAiGeminiErr(true)
-        } finally {
-          setAiGeminiLoading(false)
-        }
-      })()
-    }, 650)
-
-    return () => window.clearTimeout(handle)
-  }, [filtersKey, aiConfig.enabled, aiConfig.source, lang])
 
   useEffect(() => {
     setPage(0)
@@ -365,18 +317,6 @@ export function DashboardPage() {
 
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE))
 
-  const aiEnabled = aiConfig.enabled !== false
-  const aiBodyDisplay = useMemo(
-    () => resolveDashboardAiBody(aiConfig, lang, t('dashboard.aiBody')),
-    [aiConfig, lang, t],
-  )
-
-  const aiInsightParagraph =
-    aiConfig.source === 'gemini'
-      ? aiGeminiText ??
-        (aiGeminiLoading ? '' : aiBodyDisplay)
-      : aiBodyDisplay
-
   return (
     <div className="flex-1 space-y-6 overflow-auto p-4 md:p-8">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -441,43 +381,15 @@ export function DashboardPage() {
         })}
       </div>
 
-      <div className={clsx('grid gap-4', aiEnabled ? 'lg:grid-cols-3' : 'grid-cols-1')}>
-        <Card className={aiEnabled ? 'lg:col-span-2' : undefined}>
-          <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
-            <h2 className="font-semibold text-[var(--text-heading)]">{t('dashboard.map')}</h2>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
-              {t('dashboard.mapGeoCaption')}
-            </span>
-          </div>
-          <FeedbackMap pins={mapPins} />
-        </Card>
-        {aiEnabled && (
-          <Card className="flex flex-col !border-[var(--app-navy)] !bg-[var(--app-navy)] text-white shadow-[var(--card-shadow)]">
-            <span className="text-lg" aria-hidden>
-              ✨
-            </span>
-            <h3 className="mt-2 text-lg font-semibold text-white">{t('dashboard.aiTitle')}</h3>
-            {aiConfig.source === 'gemini' && aiGeminiLoading && !aiGeminiText && (
-              <p className="mt-2 text-sm text-white/70">{t('dashboard.aiGeminiLoading')}</p>
-            )}
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-white/80 whitespace-pre-wrap">
-              {aiInsightParagraph || '\u00a0'}
-            </p>
-            {aiConfig.source === 'gemini' && aiGeminiErr && (
-              <p className="mt-2 text-xs text-amber-200/90">{t('dashboard.aiGeminiError')}</p>
-            )}
-            {canViewAnalytics(role) ? (
-              <Link to="/app/analytics" className="mt-6 block">
-                <Button type="button" variant="primary" className="w-full">
-                  {t('dashboard.aiCta')}
-                </Button>
-              </Link>
-            ) : (
-              <p className="mt-6 text-xs text-white/50">{t('dashboard.aiCtaNoAccess')}</p>
-            )}
-          </Card>
-        )}
-      </div>
+      <Card>
+        <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
+          <h2 className="font-semibold text-[var(--text-heading)]">{t('dashboard.map')}</h2>
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
+            {t('dashboard.mapGeoCaption')}
+          </span>
+        </div>
+        <FeedbackMap pins={mapPins} />
+      </Card>
 
       <Card>
         <h2 className="text-xl font-bold tracking-tight text-[var(--text-heading)]">{t('dashboard.filters')}</h2>

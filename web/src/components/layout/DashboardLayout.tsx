@@ -139,7 +139,6 @@ export function DashboardLayout() {
     { to: '/app/admin/categories', label: t('nav.adminCategories'), icon: '🏷️' },
     { to: '/app/admin/focal-points', label: t('nav.adminFocal'), icon: '📌' },
     { to: '/app/admin/channels', label: t('nav.adminChannels'), icon: '📡' },
-    { to: '/app/admin/ai-insight', label: t('nav.adminAiInsight'), icon: '✨' },
     { to: '/app/admin/audit', label: t('nav.adminAudit'), icon: '📋' },
   ]
 

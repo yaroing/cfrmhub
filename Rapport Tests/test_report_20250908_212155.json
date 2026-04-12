@@ -1,0 +1,1192 @@
+{
+  "test_summary": {
+    "test_date": "2025-09-08T21:21:55.122312",
+    "total_scenarios": 207,
+    "scenarios_passed": 161,
+    "scenarios_failed": 46,
+    "success_rate": 77.77777777777779
+  },
+  "test_results": {
+    "sms_reception": {
+      "test_name": "SMS Reception",
+      "scenarios_tested": 20,
+      "scenarios_passed": 20,
+      "scenarios_failed": 0,
+      "details": [
+        {
+          "scenario_id": "SMS-001",
+          "status": "PASS",
+          "message": "Comment puis-je changer d'emplacement ?...",
+          "response_time": 0.7333379317091957,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-002",
+          "status": "PASS",
+          "message": "I am not receiving clean water - URGENT - Zone B...",
+          "response_time": 0.9889256469486181,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-003",
+          "status": "PASS",
+          "message": "URGENT: Problem with distribution in the camp...",
+          "response_time": 1.86571020877109,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-004",
+          "status": "PASS",
+          "message": "Hello, I need help with medical care - URGENT 🙏...",
+          "response_time": 0.6170587311850935,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-005",
+          "status": "PASS",
+          "message": "Thank you for protection, excellent...",
+          "response_time": 1.703832479630094,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-006",
+          "status": "PASS",
+          "message": "Can you help me with my rights? - Famille 10 perso...",
+          "response_time": 1.5987401902653768,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-007",
+          "status": "PASS",
+          "message": "How can I change location?...",
+          "response_time": 1.3191119389070969,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-008",
+          "status": "PASS",
+          "message": "I am not receiving protection - Famille 7 personne...",
+          "response_time": 1.1583705974248728,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-009",
+          "status": "PASS",
+          "message": "I am not receiving shelter - URGENT...",
+          "response_time": 1.0846065884970943,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-010",
+          "status": "PASS",
+          "message": "URGENT: Problem with access in the camp...",
+          "response_time": 1.9746216723639487,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-011",
+          "status": "PASS",
+          "message": "How can I contact a manager? - Famille 1 personnes...",
+          "response_time": 1.3720997988754298,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-012",
+          "status": "PASS",
+          "message": "Comment puis-je contacter un responsable ? - URGEN...",
+          "response_time": 1.0646895330768142,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-013",
+          "status": "PASS",
+          "message": "Information request about eligibility criteria...",
+          "response_time": 1.5809505083836004,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-014",
+          "status": "PASS",
+          "message": "Issue reported: too long wait - Zone C...",
+          "response_time": 1.8346202074932723,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-015",
+          "status": "PASS",
+          "message": "Information request about contacts...",
+          "response_time": 0.7078767398480044,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-016",
+          "status": "PASS",
+          "message": "Comment puis-je obtenir un rendez-vous ?...",
+          "response_time": 1.366590644984789,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-017",
+          "status": "PASS",
+          "message": "Problème signalé: sécurité insuffisante - Famille ...",
+          "response_time": 1.0555374050285655,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-018",
+          "status": "PASS",
+          "message": "هل يمكنكم مساعدتي مع الخدمات المتاحة؟ 🙏...",
+          "response_time": 0.9855020464051708,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-019",
+          "status": "PASS",
+          "message": "URGENT: Problème avec communication dans le camp -...",
+          "response_time": 0.613969387873305,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "SMS-020",
+          "status": "PASS",
+          "message": "Information request about next activities - Famill...",
+          "response_time": 1.9672103965027514,
+          "ticket_created": true
+        }
+      ]
+    },
+    "web_forms": {
+      "test_name": "Web Form Submission",
+      "scenarios_tested": 15,
+      "scenarios_passed": 15,
+      "scenarios_failed": 0,
+      "details": [
+        {
+          "scenario_id": "WEB-001",
+          "status": "PASS",
+          "subject": "Question sur mon éligibilité",
+          "response_time": 1.7371935200224802,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-002",
+          "status": "PASS",
+          "subject": "Demande de réinstallation",
+          "response_time": 1.3292341014200484,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-003",
+          "status": "PASS",
+          "subject": "Problème d'accès aux soins médicaux",
+          "response_time": 2.526119896605091,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-004",
+          "status": "PASS",
+          "subject": "Félicitations pour l'aide reçue",
+          "response_time": 2.3393204059898114,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-005",
+          "status": "PASS",
+          "subject": "Plainte concernant le personnel",
+          "response_time": 1.020927563216627,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-006",
+          "status": "PASS",
+          "subject": "Demande d'information sur les services",
+          "response_time": 2.4828003786411132,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-007",
+          "status": "PASS",
+          "subject": "Félicitations pour l'aide reçue",
+          "response_time": 1.4469200089662966,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-008",
+          "status": "PASS",
+          "subject": "Demande d'information sur les services",
+          "response_time": 2.144176837823528,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-009",
+          "status": "PASS",
+          "subject": "Félicitations pour l'aide reçue",
+          "response_time": 1.7609796234212316,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-010",
+          "status": "PASS",
+          "subject": "Demande de réinstallation",
+          "response_time": 1.6673163543612013,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-011",
+          "status": "PASS",
+          "subject": "Plainte concernant le personnel",
+          "response_time": 2.6279453909170303,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-012",
+          "status": "PASS",
+          "subject": "Félicitations pour l'aide reçue",
+          "response_time": 1.2869903281361121,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-013",
+          "status": "PASS",
+          "subject": "Demande d'information sur les services",
+          "response_time": 1.3058403744911125,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-014",
+          "status": "PASS",
+          "subject": "Plainte concernant le personnel",
+          "response_time": 1.6802793443614668,
+          "ticket_created": true
+        },
+        {
+          "scenario_id": "WEB-015",
+          "status": "PASS",
+          "subject": "Demande d'assistance technique",
+          "response_time": 2.2126851880795004,
+          "ticket_created": true
+        }
+      ]
+    },
+    "messaging": {
+      "test_name": "Messaging Integration",
+      "scenarios_tested": 15,
+      "scenarios_passed": 15,
+      "scenarios_failed": 0,
+      "details": [
+        {
+          "scenario_id": "MSG-001",
+          "status": "PASS",
+          "platform": "telegram",
+          "message": "Help! Pas de nourriture...",
+          "response_time": 2.3626304028342178
+        },
+        {
+          "scenario_id": "MSG-002",
+          "status": "PASS",
+          "platform": "slack",
+          "message": "Question rapide sur mon dossier...",
+          "response_time": 1.2145796546330137
+        },
+        {
+          "scenario_id": "MSG-003",
+          "status": "PASS",
+          "platform": "slack",
+          "message": "Question rapide sur mon dossier...",
+          "response_time": 0.5416538885101543
+        },
+        {
+          "scenario_id": "MSG-004",
+          "status": "PASS",
+          "platform": "slack",
+          "message": "🤔 Comment obtenir de l'aide ?...",
+          "response_time": 0.839203446737113
+        },
+        {
+          "scenario_id": "MSG-005",
+          "status": "PASS",
+          "platform": "discord",
+          "message": "🚀 Excellent travail !...",
+          "response_time": 1.679739213698914
+        },
+        {
+          "scenario_id": "MSG-006",
+          "status": "PASS",
+          "platform": "slack",
+          "message": "Problème ici...",
+          "response_time": 1.0675907404006524
+        },
+        {
+          "scenario_id": "MSG-007",
+          "status": "PASS",
+          "platform": "slack",
+          "message": "😊 L'aide est arrivée !...",
+          "response_time": 2.3569574098050268
+        },
+        {
+          "scenario_id": "MSG-008",
+          "status": "PASS",
+          "platform": "whatsapp",
+          "message": "J'ai joint un document de ma famille...",
+          "response_time": 1.4278140034563225
+        },
+        {
+          "scenario_id": "MSG-009",
+          "status": "PASS",
+          "platform": "slack",
+          "message": "Question rapide sur mon dossier...",
+          "response_time": 1.4066302209819226
+        },
+        {
+          "scenario_id": "MSG-010",
+          "status": "PASS",
+          "platform": "discord",
+          "message": "Salut, j'ai un problème avec l'aide...",
+          "response_time": 0.6978485624198081
+        },
+        {
+          "scenario_id": "MSG-011",
+          "status": "PASS",
+          "platform": "discord",
+          "message": "Regardez cette image de la distribution...",
+          "response_time": 1.1564314299999714
+        },
+        {
+          "scenario_id": "MSG-012",
+          "status": "PASS",
+          "platform": "whatsapp",
+          "message": "Super service !...",
+          "response_time": 0.5556596647578418
+        },
+        {
+          "scenario_id": "MSG-013",
+          "status": "PASS",
+          "platform": "telegram",
+          "message": "Comment s'inscrire ?...",
+          "response_time": 2.1142574867897497
+        },
+        {
+          "scenario_id": "MSG-014",
+          "status": "PASS",
+          "platform": "whatsapp",
+          "message": "Merci pour l'aide 👍...",
+          "response_time": 0.6695682925476996
+        },
+        {
+          "scenario_id": "MSG-015",
+          "status": "PASS",
+          "platform": "discord",
+          "message": "Regardez cette image de la distribution...",
+          "response_time": 1.2851208401750793
+        }
+      ]
+    },
+    "classification": {
+      "test_name": "Automatic Classification",
+      "scenarios_tested": 50,
+      "scenarios_passed": 5,
+      "scenarios_failed": 45,
+      "accuracy_by_category": {
+        "Information": {
+          "correct": 5,
+          "total": 5
+        },
+        "Request": {
+          "correct": 0,
+          "total": 4
+        },
+        "Praise": {
+          "correct": 0,
+          "total": 2
+        },
+        "Bug": {
+          "correct": 0,
+          "total": 2
+        },
+        "Question": {
+          "correct": 0,
+          "total": 11
+        },
+        "Other": {
+          "correct": 0,
+          "total": 5
+        },
+        "Suggestion": {
+          "correct": 0,
+          "total": 7
+        },
+        "Feedback": {
+          "correct": 0,
+          "total": 3
+        },
+        "PSEA": {
+          "correct": 0,
+          "total": 4
+        },
+        "Complaint": {
+          "correct": 0,
+          "total": 3
+        },
+        "SEA": {
+          "correct": 0,
+          "total": 3
+        },
+        "Feature Request": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "details": [
+        {
+          "scenario_id": "CLASS-001",
+          "status": "PASS",
+          "text": "Je ne reçois pas éducation - Famille 4 personnes -...",
+          "expected_category": "Information",
+          "predicted_category": "Information",
+          "is_correct": true
+        },
+        {
+          "scenario_id": "CLASS-002",
+          "status": "FAIL",
+          "text": "شكرا لكم على الماء الصالح للشرب، مثالي...",
+          "expected_category": "Request",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-003",
+          "status": "PASS",
+          "text": "URGENT: Problem with hygiene in the camp 🙏...",
+          "expected_category": "Information",
+          "predicted_category": "Information",
+          "is_correct": true
+        },
+        {
+          "scenario_id": "CLASS-004",
+          "status": "FAIL",
+          "text": "Merci pour abri, professionnel - URGENT...",
+          "expected_category": "Praise",
+          "predicted_category": "Feedback",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-005",
+          "status": "FAIL",
+          "text": "Problème signalé: attente trop longue...",
+          "expected_category": "Bug",
+          "predicted_category": "Complaint",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-006",
+          "status": "FAIL",
+          "text": "Hello, I need help with protection - Famille 9 per...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-007",
+          "status": "FAIL",
+          "text": "هل يمكنكم مساعدتي مع ملفي؟ - URGENT...",
+          "expected_category": "Request",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-008",
+          "status": "FAIL",
+          "text": "عمل رائع مع الحماية...",
+          "expected_category": "Other",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-009",
+          "status": "FAIL",
+          "text": "Information request about contacts - URGENT...",
+          "expected_category": "Suggestion",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-010",
+          "status": "FAIL",
+          "text": "Can you help me with my file? - Zone B...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-011",
+          "status": "FAIL",
+          "text": "Issue reported: contaminated water - URGENT...",
+          "expected_category": "Feedback",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-012",
+          "status": "FAIL",
+          "text": "Comment puis-je changer d'emplacement ? - Famille ...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-013",
+          "status": "FAIL",
+          "text": "Can you help me with available services?...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-014",
+          "status": "FAIL",
+          "text": "Problème signalé: attente trop longue...",
+          "expected_category": "Bug",
+          "predicted_category": "Complaint",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-015",
+          "status": "FAIL",
+          "text": "URGENT: Problem with distribution in the camp...",
+          "expected_category": "PSEA",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-016",
+          "status": "FAIL",
+          "text": "Information request about procedures - Famille 8 p...",
+          "expected_category": "Suggestion",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-017",
+          "status": "FAIL",
+          "text": "Hello, I need help with shelter...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-018",
+          "status": "FAIL",
+          "text": "Great work with protection...",
+          "expected_category": "PSEA",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-019",
+          "status": "PASS",
+          "text": "URGENT: Problem with access in the camp - Zone B...",
+          "expected_category": "Information",
+          "predicted_category": "Information",
+          "is_correct": true
+        },
+        {
+          "scenario_id": "CLASS-020",
+          "status": "FAIL",
+          "text": "I am not receiving food distribution...",
+          "expected_category": "Suggestion",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-021",
+          "status": "FAIL",
+          "text": "I am not receiving education - URGENT...",
+          "expected_category": "Feedback",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-022",
+          "status": "FAIL",
+          "text": "Complaint about delays - Famille 9 personnes - URG...",
+          "expected_category": "Complaint",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-023",
+          "status": "FAIL",
+          "text": "I am not receiving protection - Famille 10 personn...",
+          "expected_category": "Complaint",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-024",
+          "status": "FAIL",
+          "text": "Thank you for protection, perfect...",
+          "expected_category": "Other",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-025",
+          "status": "FAIL",
+          "text": "Hello, I need help with medical care...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-026",
+          "status": "FAIL",
+          "text": "Thank you for clean water, excellent...",
+          "expected_category": "Praise",
+          "predicted_category": "Feedback",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-027",
+          "status": "FAIL",
+          "text": "Can you help me with next distributions?...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-028",
+          "status": "FAIL",
+          "text": "How can I change location?...",
+          "expected_category": "Complaint",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-029",
+          "status": "FAIL",
+          "text": "Great work with education - URGENT...",
+          "expected_category": "Other",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-030",
+          "status": "FAIL",
+          "text": "Information request about contacts...",
+          "expected_category": "SEA",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-031",
+          "status": "FAIL",
+          "text": "I am not receiving medical care - Famille 7 person...",
+          "expected_category": "Suggestion",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-032",
+          "status": "FAIL",
+          "text": "لا أتلقى الحماية...",
+          "expected_category": "PSEA",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-033",
+          "status": "FAIL",
+          "text": "Can you help me with my rights?...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-034",
+          "status": "FAIL",
+          "text": "I am not receiving clean water - Famille 3 personn...",
+          "expected_category": "Request",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-035",
+          "status": "FAIL",
+          "text": "Information request about next activities - Famill...",
+          "expected_category": "SEA",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-036",
+          "status": "FAIL",
+          "text": "Complaint about staff...",
+          "expected_category": "Suggestion",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-037",
+          "status": "FAIL",
+          "text": "Complaint about access...",
+          "expected_category": "SEA",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-038",
+          "status": "FAIL",
+          "text": "Issue reported: too long wait - Famille 3 personne...",
+          "expected_category": "Feedback",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-039",
+          "status": "FAIL",
+          "text": "I am not receiving shelter - Famille 10 personnes ...",
+          "expected_category": "Request",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-040",
+          "status": "FAIL",
+          "text": "Information request about contacts...",
+          "expected_category": "Other",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-041",
+          "status": "FAIL",
+          "text": "I am not receiving education...",
+          "expected_category": "Other",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-042",
+          "status": "PASS",
+          "text": "Thank you for food distribution, professional - Fa...",
+          "expected_category": "Information",
+          "predicted_category": "Information",
+          "is_correct": true
+        },
+        {
+          "scenario_id": "CLASS-043",
+          "status": "FAIL",
+          "text": "Can you help me with my rights?...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-044",
+          "status": "FAIL",
+          "text": "URGENT: Problem with transport in the camp...",
+          "expected_category": "Suggestion",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-045",
+          "status": "FAIL",
+          "text": "Issue reported: too long wait...",
+          "expected_category": "PSEA",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-046",
+          "status": "FAIL",
+          "text": "Hello, I need help with clean water...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-047",
+          "status": "PASS",
+          "text": "I am not receiving clean water - Famille 6 personn...",
+          "expected_category": "Information",
+          "predicted_category": "Information",
+          "is_correct": true
+        },
+        {
+          "scenario_id": "CLASS-048",
+          "status": "FAIL",
+          "text": "Complaint about access - Zone D...",
+          "expected_category": "Suggestion",
+          "predicted_category": "Information",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-049",
+          "status": "FAIL",
+          "text": "Demande d'information sur les critères d'éligibili...",
+          "expected_category": "Feature Request",
+          "predicted_category": "Request",
+          "is_correct": false
+        },
+        {
+          "scenario_id": "CLASS-050",
+          "status": "FAIL",
+          "text": "Hello, I need help with clean water...",
+          "expected_category": "Question",
+          "predicted_category": "Information",
+          "is_correct": false
+        }
+      ]
+    },
+    "performance": {
+      "test_name": "Performance Testing",
+      "scenarios_tested": 100,
+      "scenarios_passed": 100,
+      "scenarios_failed": 0,
+      "response_times": [
+        0.37717151641845703,
+        0.20546245574951172,
+        0.4408838748931885,
+        0.429980993270874,
+        0.3826558589935303,
+        0.26149940490722656,
+        0.2610328197479248,
+        0.47499799728393555,
+        0.3811614513397217,
+        0.27396702766418457,
+        0.12916779518127441,
+        0.2797243595123291,
+        0.18115901947021484,
+        0.21140146255493164,
+        0.16111159324645996,
+        0.3102145195007324,
+        0.3050515651702881,
+        0.4952244758605957,
+        0.29935312271118164,
+        0.4816114902496338,
+        0.12481355667114258,
+        0.4604623317718506,
+        0.37230730056762695,
+        0.46394801139831543,
+        0.21797919273376465,
+        0.23242878913879395,
+        0.3846004009246826,
+        0.4992063045501709,
+        0.30080175399780273,
+        0.35698986053466797,
+        0.41817617416381836,
+        0.3504312038421631,
+        0.24887681007385254,
+        0.15840554237365723,
+        0.18697094917297363,
+        0.36500120162963867,
+        0.26924657821655273,
+        0.13123369216918945,
+        0.19961953163146973,
+        0.14249086380004883,
+        0.4591338634490967,
+        0.48902463912963867,
+        0.23051238059997559,
+        0.19131159782409668,
+        0.45169901847839355,
+        0.2198166847229004,
+        0.2660501003265381,
+        0.2641777992248535,
+        0.37047505378723145,
+        0.21196317672729492,
+        0.3396127223968506,
+        0.30316781997680664,
+        0.2863755226135254,
+        0.21854424476623535,
+        0.3570079803466797,
+        0.1277756690979004,
+        0.1409912109375,
+        0.3741006851196289,
+        0.4295938014984131,
+        0.23077702522277832,
+        0.15574145317077637,
+        0.2678990364074707,
+        0.21634507179260254,
+        0.4285285472869873,
+        0.16496062278747559,
+        0.28681397438049316,
+        0.439577579498291,
+        0.1760876178741455,
+        0.4465312957763672,
+        0.2087705135345459,
+        0.3746962547302246,
+        0.1941545009613037,
+        0.3227348327636719,
+        0.20817279815673828,
+        0.3635115623474121,
+        0.10878372192382812,
+        0.4598410129547119,
+        0.2716948986053467,
+        0.17644357681274414,
+        0.3584117889404297,
+        0.4742608070373535,
+        0.4890427589416504,
+        0.26949548721313477,
+        0.42919063568115234,
+        0.4812660217285156,
+        0.18215489387512207,
+        0.19723987579345703,
+        0.4092087745666504,
+        0.39128732681274414,
+        0.2498335838317871,
+        0.1026298999786377,
+        0.18888378143310547,
+        0.41763997077941895,
+        0.3271486759185791,
+        0.10312747955322266,
+        0.22225165367126465,
+        0.16327905654907227,
+        0.4584653377532959,
+        0.49526333808898926,
+        0.40140867233276367
+      ],
+      "throughput": 3.3025110027887976,
+      "details": []
+    },
+    "security": {
+      "test_name": "Security Testing",
+      "scenarios_tested": 3,
+      "scenarios_passed": 2,
+      "scenarios_failed": 1,
+      "details": [
+        {
+          "test_name": "SQL Injection",
+          "status": "FAIL",
+          "input": "'; DROP TABLE tickets; --...",
+          "is_safe": false
+        },
+        {
+          "test_name": "XSS Attack",
+          "status": "PASS",
+          "input": "<script>alert('XSS')</script>...",
+          "is_safe": true
+        },
+        {
+          "test_name": "PSEA Data Protection",
+          "status": "PASS",
+          "input": "Signalement d'abus sexuel par le personnel...",
+          "is_safe": true
+        }
+      ]
+    },
+    "integration": {
+      "test_name": "Integration Testing",
+      "scenarios_tested": 4,
+      "scenarios_passed": 4,
+      "scenarios_failed": 0,
+      "details": [
+        {
+          "integration_name": "SMS Provider",
+          "status": "PASS",
+          "endpoint": "/api/v1/sms/test",
+          "response_time": 0.9311600420410842
+        },
+        {
+          "integration_name": "WhatsApp API",
+          "status": "PASS",
+          "endpoint": "/api/v1/whatsapp/test",
+          "response_time": 1.3695307697642836
+        },
+        {
+          "integration_name": "Email Service",
+          "status": "PASS",
+          "endpoint": "/api/v1/email/test",
+          "response_time": 1.9350070045859047
+        },
+        {
+          "integration_name": "Translation Service",
+          "status": "PASS",
+          "endpoint": "/api/v1/translate/test",
+          "response_time": 0.846797604646736
+        }
+      ]
+    }
+  },
+  "kpi_results": {
+    "test_summary": {
+      "test_date": "2025-09-08T21:21:55.122265",
+      "total_scenarios": 0,
+      "total_messages": 0,
+      "test_duration_hours": 24
+    },
+    "kpi_results": {
+      "reception_rate": {
+        "name": "Taux de Réception",
+        "current_value": 99.5,
+        "target_value": 99.5,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "Critical"
+      },
+      "reception_latency": {
+        "name": "Délai de Réception",
+        "current_value": 3.5125,
+        "target_value": 5.0,
+        "unit": "secondes",
+        "status": "FAIL",
+        "deviation": -29.75,
+        "importance": "High"
+      },
+      "channel_availability": {
+        "name": "Disponibilité des Canaux",
+        "current_value": 99.9,
+        "target_value": 99.9,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "Critical"
+      },
+      "processing_time": {
+        "name": "Délai de Traitement",
+        "current_value": 16.25,
+        "target_value": 15.0,
+        "unit": "minutes",
+        "status": "PASS",
+        "deviation": 8.333333333333332,
+        "importance": "High"
+      },
+      "classification_accuracy": {
+        "name": "Précision de Classification",
+        "current_value": 85.0,
+        "target_value": 85.0,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "High"
+      },
+      "auto_classification_rate": {
+        "name": "Taux de Classification Automatique",
+        "current_value": 70.0,
+        "target_value": 70.0,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "Medium"
+      },
+      "user_satisfaction": {
+        "name": "Satisfaction Utilisateur",
+        "current_value": 7.7,
+        "target_value": 8.0,
+        "unit": "/10",
+        "status": "CRITICAL_FAIL",
+        "deviation": -3.749999999999998,
+        "importance": "Critical"
+      },
+      "response_satisfaction": {
+        "name": "Satisfaction des Réponses",
+        "current_value": 80.0,
+        "target_value": 80.0,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "High"
+      },
+      "resolution_satisfaction": {
+        "name": "Satisfaction de Résolution",
+        "current_value": 75.0,
+        "target_value": 75.0,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "High"
+      },
+      "throughput": {
+        "name": "Débit de Traitement",
+        "current_value": 100.0,
+        "target_value": 100.0,
+        "unit": "tickets/heure",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "High"
+      },
+      "queue_length": {
+        "name": "Longueur de File d'Attente",
+        "current_value": 10.125,
+        "target_value": 10.0,
+        "unit": "tickets",
+        "status": "PASS",
+        "deviation": 1.25,
+        "importance": "Medium"
+      },
+      "error_rate": {
+        "name": "Taux d'Erreur",
+        "current_value": 2.0,
+        "target_value": 2.0,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "Critical"
+      },
+      "first_contact_resolution": {
+        "name": "Résolution au Premier Contact",
+        "current_value": 60.0,
+        "target_value": 60.0,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "High"
+      },
+      "escalation_rate": {
+        "name": "Taux d'Escalade",
+        "current_value": 15.0,
+        "target_value": 15.0,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "Medium"
+      },
+      "abandonment_rate": {
+        "name": "Taux d'Abandon",
+        "current_value": 5.0,
+        "target_value": 5.0,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "High"
+      },
+      "sms_success_rate": {
+        "name": "Taux de Succès SMS",
+        "current_value": 98.0,
+        "target_value": 98.0,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "High"
+      },
+      "web_form_completion": {
+        "name": "Taux de Completion des Formulaires Web",
+        "current_value": 90.0,
+        "target_value": 90.0,
+        "unit": "%",
+        "status": "PASS",
+        "deviation": 0.0,
+        "importance": "Medium"
+      },
+      "messaging_response_time": {
+        "name": "Temps de Réponse Messagerie",
+        "current_value": 4.5,
+        "target_value": 5.0,
+        "unit": "minutes",
+        "status": "FAIL",
+        "deviation": -10.0,
+        "importance": "High"
+      }
+    },
+    "performance_analysis": {},
+    "recommendations": [
+      "URGENT: Améliorer la satisfaction utilisateur - former l'équipe et optimiser les processus"
+    ]
+  },
+  "recommendations": [
+    "URGENT: classification a un taux d'échec de 90.0% - investigation requise",
+    "URGENT: security a un taux d'échec de 33.3% - investigation requise",
+    "CRITIQUE: Satisfaction Utilisateur ne respecte pas l'objectif (7.70 vs 8.00)"
+  ]
+}

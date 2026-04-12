@@ -16,7 +16,7 @@ cfrm-hub/
 │   └── package.json
 ├── supabase/
 │   ├── migrations/         # Schéma SQL, RLS, triggers, RPC (ordre ci-dessous)
-│   └── functions/          # Edge Functions (Twilio, Telegram, WhatsApp, analyse IA Gemini, etc.)
+│   └── functions/          # Edge Functions (Twilio, Telegram, WhatsApp, etc.)
 ├── docs/                   # Installation, technique, utilisateur, tests, checklist
 └── LICENSE                 # MIT
 ```
@@ -40,7 +40,7 @@ Exécuter **dans l’ordre** dans *SQL Editor* (ou via CLI `supabase db push`) :
 | 6 | `supabase/migrations/20260405150000_telegram_bot_channel.sql` | Canal `telegram_bot` + index idempotence (`update_id`) pour le webhook bot |
 | 7 | `supabase/migrations/20260405160000_repair_telegram_bot_trigger.sql` | Réaligne contrainte + trigger si la #6 avait été oubliée (évite canal `web` pour Telegram) |
 
-Liste complète et ordre à jour (WhatsApp Business, analyse IA, etc.) : **[docs/INSTALLATION.md](docs/INSTALLATION.md)**.
+Liste complète et ordre à jour (WhatsApp Business, etc.) : **[docs/INSTALLATION.md](docs/INSTALLATION.md)**.
 
 **Sans les fichiers 2 et 3**, le frontend v2 (pièces jointes, certains rôles, RPC à paramètres étendus) peut **échouer** ou être incohérent avec la base.
 
@@ -89,6 +89,7 @@ Ouvrir `http://localhost:5173`.
 - [Documentation technique](docs/TECHNIQUE.md)
 - [Guide utilisateur](docs/UTILISATEUR.md)
 - [Rapport de tests](docs/RAPPORT_TESTS.md)
+- [Tests réels Supabase + KPI SQL](docs/TESTS_SUPABASE_REELS.md)
 - [Checklist « prêt prototype »](docs/CHECKLIST.md)
 - [Sauvegardes / continuité](docs/BACKUP.md)
 - [Feuille de route](docs/ROADMAP.md)

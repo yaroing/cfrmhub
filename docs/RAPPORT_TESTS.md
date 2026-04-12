@@ -1,5 +1,9 @@
 # Rapport de tests — CFRM Hub
 
+## Tests réels Supabase (scénarios + KPI SQL)
+
+Voir **[TESTS_SUPABASE_REELS.md](TESTS_SUPABASE_REELS.md)** : `npm run test:supabase:scenarios` (soumissions RPC marquées `[CFRM-HUB-TEST]`) et fichier `supabase/tests/kpi_reel_cfrm_hub_test.sql` pour mesures / exports.
+
 ## Environnement
 
 - Tests automatisés **Vitest** + **Testing Library** (jsdom) : `npm run test` depuis `web/`.
@@ -35,6 +39,11 @@
 
 Variables : `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` via `web/.env` et Node 20+ (`--env-file`).
 
+## Scénarios instrumentés (`npm run test:supabase:scenarios`)
+
+- Suite **étendue** : **67** scénarios, **77** appels RPC positifs (dont doublons), **5** cas négatifs ; géolocalisation, canaux simulateurs, démographie ; export JSON sous `Rapport Tests/exports/`.
+- Optionnel : `SUPABASE_SERVICE_ROLE_KEY` dans `web/.env` pour vérification auto (classification, géoloc, notification sur première fiche critique, doublons).
+
 ## Plan de test manuel (scénarios démo)
 
 1. **Soumission** : formulaire public avec texte d’urgence → priorité critique attendue côté serveur ; accusé affiché.
@@ -54,6 +63,8 @@ Variables : `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` via `web/.env` et Node
 - **Délai de traitement** : différence `created_at` → premier passage à *En cours* ou *Clos* (à extraire de `feedback_status_history` en requête avancée).
 - **Précision de classification** : comparaison manuelle catégorie suggérée vs catégorie validée.
 - **Qualité du suivi** : ratio de fiches avec au moins un commentaire interne avant clôture.
+
+Pour des **requêtes prêtes à l’emploi** sur le lot de test `[CFRM-HUB-TEST]`, utiliser `supabase/tests/kpi_reel_cfrm_hub_test.sql` (voir [TESTS_SUPABASE_REELS.md](TESTS_SUPABASE_REELS.md)).
 
 ## Limites connues
 

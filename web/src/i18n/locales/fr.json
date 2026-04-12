@@ -16,7 +16,6 @@
     "adminCategories": "Catégories",
     "adminFocal": "Points focaux",
     "adminChannels": "Canaux",
-    "adminAiInsight": "Analyse IA",
     "adminAudit": "Audit",
     "publicSite": "Site public",
     "signOut": "Déconnexion",
@@ -403,12 +402,6 @@
     "topBarSearchFeedback": "Rechercher un feedback…",
     "notificationsPlaceholder": "Notifications (à venir)",
     "mapGeoCaption": "Répartition géographique · Afrique de l’Ouest",
-    "aiTitle": "Analyse IA",
-    "aiBody": "Exemple : hausse notable des retours liés à la sécurité alimentaire sur le bassin du Lac Tchad sur la période filtrée — les rapports analytiques détaillent tendances et volumes.",
-    "aiGeminiLoading": "Synthèse en cours (Google Gemini)…",
-    "aiGeminiError": "L’analyse automatique est indisponible (clé API ou réseau). Le texte de secours s’affiche.",
-    "aiCta": "Consulter les rapports",
-    "aiCtaNoAccess": "Les rapports analytiques sont réservés aux rôles équipe autorisés.",
     "tabAll": "Tout voir",
     "tabUrgent": "Urgents",
     "tabPending": "En attente",
@@ -581,26 +574,6 @@
     "waIngestHint": "Tant que l’ingestion est désactivée, la fonction répond 200 à Meta sans créer de fiche.",
     "waDocLink": "Guide détaillé : docs/WHATSAPP_BUSINESS_API.md",
     "waDeployNote": "Déployez la fonction : supabase functions deploy whatsapp-business-webhook"
-  },
-  "adminAiInsight": {
-    "title": "Configurer l’analyse IA (tableau de bord)",
-    "intro": "Le panneau « Analyse IA » à côté de la carte peut afficher un texte fixe (manuel) ou une synthèse générée par Google Gemini à partir des indicateurs visibles pour chaque utilisateur (respect des droits d’accès). Les rapports détaillés restent dans Analytique.",
-    "showBlock": "Afficher le bloc « Analyse IA » sur le tableau de bord",
-    "sourceLabel": "Source du texte",
-    "source": {
-      "manual": "Texte manuel (fr / en)",
-      "gemini": "Google Gemini (agrégats du tableau de bord)"
-    },
-    "geminiHint": "Déployez la fonction Edge « dashboard-ai-insight » et définissez le secret GEMINI_API_KEY dans Supabase (Edge Functions → Secrets). Optionnel : GEMINI_MODEL (ex. gemini-2.0-flash ou gemini-1.5-flash). La clé ne doit jamais figurer dans le dépôt ni dans le navigateur.",
-    "bodyFr": "Texte affiché (français)",
-    "bodyEn": "Texte affiché (anglais)",
-    "placeholderFr": "Laisser vide pour utiliser le texte par défaut de l’interface",
-    "placeholderEn": "Leave empty to use the default UI text",
-    "fallbackHint": "Si un champ de langue est vide, le libellé défini dans les fichiers de traduction (dashboard.aiBody) est utilisé pour cette langue.",
-    "fallbackHintGemini": "En mode Gemini, les champs ci-dessus servent de secours si l’API échoue ou n’est pas configurée.",
-    "save": "Enregistrer",
-    "saving": "Enregistrement…",
-    "saved": "Configuration enregistrée."
   },
   "adminAudit": {
     "title": "Journal d’audit",

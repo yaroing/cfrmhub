@@ -21,7 +21,6 @@ import { ActionTrackerPage } from './pages/ActionTrackerPage'
 import { AnalyticsPage } from './pages/AnalyticsPage'
 import { FieldSubmitPage } from './pages/FieldSubmitPage'
 import { AdminFocalPointsPage } from './pages/admin/AdminFocalPointsPage'
-import { AdminAiInsightPage } from './pages/admin/AdminAiInsightPage'
 import type { ReactNode } from 'react'
 
 function AdminGate({ children }: { children: ReactNode }) {
@@ -120,14 +119,6 @@ export default function App() {
                 element={
                   <AdminGate>
                     <AdminChannelsPage />
-                  </AdminGate>
-                }
-              />
-              <Route
-                path="admin/ai-insight"
-                element={
-                  <AdminGate>
-                    <AdminAiInsightPage />
                   </AdminGate>
                 }
               />

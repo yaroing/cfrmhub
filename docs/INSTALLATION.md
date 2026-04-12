@@ -12,8 +12,8 @@
    6. `supabase/migrations/20260405150000_telegram_bot_channel.sql` (bot Telegram — voir [TELEGRAM.md](TELEGRAM.md))
    7. `supabase/migrations/20260405160000_repair_telegram_bot_trigger.sql` (réparation si la #6 manquait — Telegram affiché comme « web »)
    8. `supabase/migrations/20260406210000_whatsapp_business_channel.sql` (WhatsApp Business / Meta Cloud API — compte Meta : [GUIDE_COMPTE_META_WHATSAPP_BUSINESS.md](GUIDE_COMPTE_META_WHATSAPP_BUSINESS.md), branchement CFRM : [WHATSAPP_BUSINESS_API.md](WHATSAPP_BUSINESS_API.md))
-   9. `supabase/migrations/20260406230000_dashboard_ai_setting.sql` (texte configurable du bloc « Analyse IA » + lecture pour tous les rôles connectés)
-   10. `supabase/migrations/20260407140000_dashboard_ai_source.sql` (champ JSON `source` : manuel ou Gemini)
+   9. `supabase/migrations/20260406230000_dashboard_ai_setting.sql` (historique : clé `channel_settings.dashboard_ai` — **l’interface « Analyse IA » a été retirée** ; migration sans effet visible dans l’app)
+   10. `supabase/migrations/20260407140000_dashboard_ai_source.sql` (historique : idem, champ `source` dans le même JSON)
 3. Vérifiez les messages :
    - Si `ALTER PUBLICATION supabase_realtime ADD TABLE` indique que la table est déjà dans la publication, c’est normal.
 4. **Authentication** : activez le fournisseur *Email* (mot de passe).
@@ -58,6 +58,7 @@ npm run dev
 |----------|--------|----------|
 | `npm run test` | Après `npm install` | Tests unitaires / composants (Vitest) |
 | `npm run smoke:supabase` | Après migrations + `.env` | Vérifie que la RPC `submit_public_feedback` répond (crée **une** ligne de test dans `feedbacks`) |
+| `npm run test:supabase:scenarios` | Idem | Scénarios réels T1–T7 + KPI exportés ; voir [TESTS_SUPABASE_REELS.md](TESTS_SUPABASE_REELS.md) |
 | `npm run test:e2e` | Avant démo | Parcours public (accueil, formulaire, validation client) sans dépendre d’une soumission réelle réussie |
 
 ## 5. Vérifications manuelles
@@ -75,19 +76,6 @@ Utilisez le formulaire public et les trois simulateurs (connecté en validateur 
 
 Option : exécuter `docs/DEMO_DATA.sql` dans l’éditeur SQL (selon droits) pour injecter quelques fiches types.
 
-## 7. Analyse IA (Google Gemini) — optionnel
-
-1. Créez une clé API sur [Google AI Studio](https://aistudio.google.com/apikey).
-2. **Important (502 fréquent)** : dans Google Cloud Console → **Identifiants** → votre clé → **Restrictions d’application**, choisissez **Aucune** (ou une restriction adaptée aux appels **serveur**, pas « sites web »). Une clé limitée par **référents HTTP** fonctionne dans le navigateur mais est **refusée** depuis les Edge Functions Supabase (IP/serveur).
-3. Dans Supabase : **Edge Functions → Secrets**, ajoutez `GEMINI_API_KEY`. Optionnel : `GEMINI_MODEL` (sinon la fonction essaie d’abord `gemini-1.5-flash`, puis `gemini-2.0-flash` si le premier renvoie 404 / modèle inconnu). En cas de **502**, ouvrez l’onglet Réseau du navigateur : le JSON contient `detail` (message Google) et souvent `hint` ; les logs de la fonction indiquent le modèle essayé.
-4. Déployez la fonction (inclut `verify_jwt = false` dans `config.toml` : l’authentification est faite dans le code avec `auth.getUser(jwt)` pour éviter des 401 erronés à la passerelle) :
-   ```bash
-   supabase functions deploy dashboard-ai-insight
-   ```
-5. Dans l’app (admin) : **Analyse IA** → source **Google Gemini**, enregistrer.
-
-Les agrégats (KPI) sont calculés côté serveur avec le jeton de l’utilisateur connecté (RLS). La clé Gemini ne quitte jamais Supabase.
-
-## 8. Sauvegardes
+## 7. Sauvegardes
 
 Voir **[BACKUP.md](BACKUP.md)** pour les rappels sur la continuité des données Supabase.
